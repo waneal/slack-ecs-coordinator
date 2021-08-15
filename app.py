@@ -1,4 +1,6 @@
 import os
+import logging
+logging.basicConfig(level=logging.INFO)
 
 import boto3 
 from slack_bolt import App
