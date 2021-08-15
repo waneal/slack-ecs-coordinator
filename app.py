@@ -21,6 +21,12 @@ def handle_mention(body, say, logger):
     logger.info(body)
     say("hello")
 
+@app.command("/list-services")
+def handle_action_list_services(ack, body, say, logger):
+    logger.info(body)
+    ack()
+    say("You typed {cluster}".format(cluster=body["text"]))
+
 if __name__ == "__main__":
     # Create an app-level token with connections:write scope
     handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
