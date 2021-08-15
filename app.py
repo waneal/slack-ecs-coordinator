@@ -1,6 +1,12 @@
 import os
+
+import boto3 
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
+
+# Initialize boto3
+ecs = boto3.client("ecs")
+app_as= boto3.client("application-autoscaling")
 
 # Install the Slack app and get xoxb- token in advance
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
