@@ -6,6 +6,8 @@ import boto3
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
+REGION = os.environ["AWS_DEFAULT_REGION"]
+
 # Initialize boto3
 ecs = boto3.client("ecs")
 app_as= boto3.client("application-autoscaling")
