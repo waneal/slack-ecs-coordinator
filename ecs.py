@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass
 class AutoScaling:
@@ -18,5 +18,5 @@ class Service:
 
 @dataclass
 class Cluster:
-    name: str
-    services: list(Service)
+    name: str = None
+    services: list[Service] = field(default_factory=lambda: [])
